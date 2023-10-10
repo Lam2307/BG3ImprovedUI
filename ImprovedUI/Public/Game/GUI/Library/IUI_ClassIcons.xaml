@@ -159,6 +159,10 @@
 			<DataTrigger Binding="{Binding IDString}" Value="WoWDeathKnight">
 				<Setter Property="Source" Value="pack://application:,,,/GustavNoesisGUI;component/Assets/WoWDeathKnightClass/ClassIcons/Icon_WoWDeathKnightClass.png"/>
 			</DataTrigger>
+			</DataTrigger>
+			<DataTrigger Binding="{Binding IDString}" Value="DeathKnight_Class">
+				<Setter Property="Source" Value="pack://application:,,,/GustavNoesisGUI;component/Assets/Death Knight Class/ClassIcons/DeathKnight_Class.png"/>
+			</DataTrigger>
 			<!--EDIT HERE-->
 		</Style.Triggers>
 	</Style>
@@ -198,6 +202,9 @@
 			</DataTrigger>
 			<DataTrigger Binding="{Binding IDString}" Value="WoWDeathKnight">
 				<Setter Property="Source" Value="pack://application:,,,/GustavNoesisGUI;component/Assets/WoWDeathKnightClass/ClassIcons/hotbar/Icon_WoWDeathKnightClass.png"/>
+			</DataTrigger>
+			<DataTrigger Binding="{Binding IDString}" Value="WoWDeathKnight">
+				<Setter Property="Source" Value="pack://application:,,,/GustavNoesisGUI;component/Assets/Death Knight Class/ClassIcons/hotbar/WoWDeathKnight_Class.png"/>
 			</DataTrigger>
 			<!--EDIT HERE-->
         </Style.Triggers>
@@ -651,6 +658,9 @@
 			<DataTrigger Binding="{Binding SubclassIDString}" Value="UnholyDeathKnight">
 				<Setter Property="Source" Value="pack://application:,,,/GustavNoesisGUI;component/Assets/WoWDeathKnightClass/ClassIcons/Icon_UnholyDeathKnight.png"/>
 			</DataTrigger>
+			<DataTrigger Binding="{Binding SubclassIDString}" Value="FrostDeathKnight_SubClass">
+				<Setter Property="Source" Value="pack://application:,,,/GustavNoesisGUI;component/Assets/Death Knight Class/ClassIcons/FrostDeathKnight_SubClass.png"/>
+			</DataTrigger>
 			<!--EDIT HERE-->
         </Style.Triggers>
 	</Style>
@@ -789,6 +799,9 @@
 			</DataTrigger>
 			<DataTrigger Binding="{Binding SubclassIDString}" Value="UnholyDeathKnight">
 				<Setter Property="Source" Value="pack://application:,,,/GustavNoesisGUI;component/Assets/WoWDeathKnightClass/ClassIcons/hotbar/Icon_UnholyDeathKnight.png"/>
+			</DataTrigger>
+			<DataTrigger Binding="{Binding SubclassIDString}" Value="FrostDeathKnight_SubClass">
+				<Setter Property="Source" Value="pack://application:,,,/GustavNoesisGUI;component/Assets/Death Knight Class/ClassIcons/hotbar/FrostDeathKnight_SubClass.png"/>
 			</DataTrigger>
 			<!--EDIT HERE-->
         </Style.Triggers>

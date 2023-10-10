@@ -159,7 +159,6 @@
 			<DataTrigger Binding="{Binding IDString}" Value="WoWDeathKnight">
 				<Setter Property="Source" Value="pack://application:,,,/GustavNoesisGUI;component/Assets/WoWDeathKnightClass/ClassIcons/Icon_WoWDeathKnightClass.png"/>
 			</DataTrigger>
-			</DataTrigger>
 			<DataTrigger Binding="{Binding IDString}" Value="DeathKnight_Class">
 				<Setter Property="Source" Value="pack://application:,,,/GustavNoesisGUI;component/Assets/Death Knight Class/ClassIcons/DeathKnight_Class.png"/>
 			</DataTrigger>

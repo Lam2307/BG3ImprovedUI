@@ -135,6 +135,10 @@
     <ImageSource x:Key="PsionicDieUnavailable">pack://application:,,,/GustavNoesisGUI;component/Assets/PsiKnight/Shared/Resources/ico_classRes_PsionicDie_missing.png</ImageSource>
     <ImageSource x:Key="CunningDie">pack://application:,,,/GustavNoesisGUI;component/Assets/RogueRework/Shared/Resources/ico_classRes_CunningDie_d.png</ImageSource>
     <ImageSource x:Key="CunningDieUnavailable">pack://application:,,,/GustavNoesisGUI;component/Assets/RogueRework/Shared/Resources/ico_classRes_CunningDie_missing.png</ImageSource>
+    <ImageSource x:Key="RunicPower">pack://application:,,,/GustavNoesisGUI;component/Assets/Death Knight Class/Shared/Resources/RunicPower.png</ImageSource>
+    <ImageSource x:Key="RunicPowerUnavailable">pack://application:,,,/GustavNoesisGUI;component/Assets/Death Knight Class/Shared/Resources/RunicPower_Missing.png</ImageSource>
+    <ImageSource x:Key="DK_Rune">pack://application:,,,/GustavNoesisGUI;component/Assets/Death Knight Class/Shared/Resources/DK_RuneRune.png</ImageSource>
+    <ImageSource x:Key="DK_RuneUnavailable">pack://application:,,,/GustavNoesisGUI;component/Assets/Death Knight Class/Shared/Resources/DK_Rune_Missing.png</ImageSource>
 	<!-- EDIT HERE -->
 	
 	<!-- This is the icon that appears on the tooltip -->
@@ -193,6 +197,12 @@
 			</DataTrigger>
 			<DataTrigger Binding="{Binding TypeId}" Value="CunningDie">
 				<Setter Property="Source" Value="{StaticResource CunningDie}"/>
+			</DataTrigger>
+			<DataTrigger Binding="{Binding TypeId}" Value="DK_Rune">
+				<Setter Property="Source" Value="{StaticResource DK_Rune}"/>
+			</DataTrigger>
+			<DataTrigger Binding="{Binding TypeId}" Value="RunicPower">
+				<Setter Property="Source" Value="{StaticResource RunicPower}"/>
 			</DataTrigger>
 			<!-- EDIT HERE -->
 		</Style.Triggers>
@@ -766,6 +776,26 @@
 					<Setter Property="Source" Value="{StaticResource CunningDieUnavailable}"/>
 				</MultiDataTrigger.Setters>
 			</MultiDataTrigger>
+			<MultiDataTrigger>
+				<MultiDataTrigger.Conditions>
+					<Condition Binding="{Binding TypeId}" Value="DK_Rune"/>
+					<Condition Binding="{Binding Value}" Value="0"/>
+					<Condition Binding="{Binding IgnoreCost}" Value="False"/>
+				</MultiDataTrigger.Conditions>
+				<MultiDataTrigger.Setters>
+					<Setter Property="Source" Value="{StaticResource "DK_RuneUnavailable}"/>
+				</MultiDataTrigger.Setters>
+			</MultiDataTrigger>
+			<MultiDataTrigger>
+				<MultiDataTrigger.Conditions>
+					<Condition Binding="{Binding TypeId}" Value="RunicPower"/>
+					<Condition Binding="{Binding Value}" Value="0"/>
+					<Condition Binding="{Binding IgnoreCost}" Value="False"/>
+				</MultiDataTrigger.Conditions>
+				<MultiDataTrigger.Setters>
+					<Setter Property="Source" Value="{StaticResource RunicPowerUnavailable}"/>
+				</MultiDataTrigger.Setters>
+			</MultiDataTrigger>
 			<!-- EDIT HERE -->
         </Style.Triggers>
     </Style>
@@ -1050,6 +1080,24 @@
 			<ImageSource x:Key="Missing">/GustavNoesisGUI;component/Assets/RogueRework/Shared/Resources/ico_classRes_CunningDie_missing.png</ImageSource>
 		</ControlTemplate.Resources>
 		<ContentControl ContentTemplate="{StaticResource ActionResources.ActionGroup.ActionPoint}"/>
+	</ControlTemplate>
+    <ControlTemplate x:Key="ActionResources.ActionGroup.DK_RuneGroup" TargetType="ls:LSActionPoint">
+        <ControlTemplate.Resources>
+            <ImageSource x:Key="Highlight">/GustavNoesisGUI;component/Assets/Death Knight Class/Shared/Resources/DK_Rune_Hover.png</ImageSource>
+            <ImageSource x:Key="Available">/GustavNoesisGUI;component/Assets/Death Knight Class/Shared/Resources/DK_Rune.png</ImageSource>
+            <ImageSource x:Key="Used">/GustavNoesisGUI;component/Assets/Death Knight Class/Shared/Resources/DK_Rune_Used.png</ImageSource>
+            <ImageSource x:Key="Missing">/GustavNoesisGUI;component/Assets/Death Knight Class/Shared/Resources/DK_Rune_Missing.png</ImageSource>
+        </ControlTemplate.Resources>
+        <ContentPresenter ContentTemplate="{StaticResource ActionResources.ActionGroup.ActionPoint}"/>
+    </ControlTemplate>
+    <ControlTemplate x:Key="ActionResources.ActionGroup.RunicPowerGroup" TargetType="ls:LSActionPoint">
+        <ControlTemplate.Resources>
+            <ImageSource x:Key="Highlight">/GustavNoesisGUI;component/Assets/Death Knight Class/Shared/Resources/RunicPower_Hover.png</ImageSource>
+            <ImageSource x:Key="Available">/GustavNoesisGUI;component/Assets/Death Knight Class/Shared/Resources/RunicPower.png</ImageSource>
+            <ImageSource x:Key="Used">/GustavNoesisGUI;component/Assets/Death Knight Class/Shared/Resources/RunicPower_Used.png</ImageSource>
+            <ImageSource x:Key="Missing">/GustavNoesisGUI;component/Assets/Death Knight Class/Shared/Resources/RunicPower_Missing.png</ImageSource>
+        </ControlTemplate.Resources>
+        <ContentPresenter ContentTemplate="{StaticResource ActionResources.ActionGroup.ActionPoint}"/>
 	</ControlTemplate>
 	<!-- EDIT HERE -->
 	
@@ -1577,6 +1625,31 @@
 					<Setter Property="Margin" Value="0,-15,0,0"/>
 				</MultiDataTrigger.Setters>
 			</MultiDataTrigger>
+			<DataTrigger Binding="{Binding TypeId}" Value="DK_Rune">
+				<Setter Property="ActionPointTemplate" Value="{DynamicResource ActionResources.ActionGroup.FrostRuneGroup}"/>
+				<Setter Property="ActionPointSize" Value="{DynamicResource ActionResources.ActionPointSize}" />
+			</DataTrigger>
+			<MultiDataTrigger>
+				<MultiDataTrigger.Conditions>
+					<Condition Binding="{Binding TypeId}" Value="DK_Rune"/>
+					<Condition Binding="{Binding Value, Converter={StaticResource GreaterThanConverter}, ConverterParameter=1}" Value="True"/>
+				</MultiDataTrigger.Conditions>
+				<MultiDataTrigger.Setters>
+					<Setter Property="Margin" Value="0,-15,0,0"/>
+				</MultiDataTrigger.Setters>
+			</MultiDataTrigger>
+			<DataTrigger Binding="{Binding TypeId}" Value="RunicPower">
+				<Setter Property="ActionPointTemplate" Value="{DynamicResource ActionResources.ActionGroup.RunicPowerGroup}"/>
+				<Setter Property="ActionPointSize" Value="{DynamicResource ActionResources.ActionPointSize}" />
+			</DataTrigger>
+			<MultiDataTrigger>
+				<MultiDataTrigger.Conditions>
+					<Condition Binding="{Binding TypeId}" Value="RunicPower"/>
+					<Condition Binding="{Binding ActionResource.Value, Converter={StaticResource GreaterThanConverter}, ConverterParameter=1}" Value="True"/>
+				</MultiDataTrigger.Conditions>
+				<MultiDataTrigger.Setters>
+					<Setter Property="Margin" Value="0,-15,0,0"/>
+				</MultiDataTrigger.Setters>
 			<!-- EDIT HERE -->
 		</Style.Triggers>
     </Style>

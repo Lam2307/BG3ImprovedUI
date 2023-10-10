@@ -137,7 +137,7 @@
     <ImageSource x:Key="CunningDieUnavailable">pack://application:,,,/GustavNoesisGUI;component/Assets/RogueRework/Shared/Resources/ico_classRes_CunningDie_missing.png</ImageSource>
     <ImageSource x:Key="RunicPower">pack://application:,,,/GustavNoesisGUI;component/Assets/Death Knight Class/Shared/Resources/RunicPower.png</ImageSource>
     <ImageSource x:Key="RunicPowerUnavailable">pack://application:,,,/GustavNoesisGUI;component/Assets/Death Knight Class/Shared/Resources/RunicPower_Missing.png</ImageSource>
-    <ImageSource x:Key="DK_Rune">pack://application:,,,/GustavNoesisGUI;component/Assets/Death Knight Class/Shared/Resources/DK_RuneRune.png</ImageSource>
+    <ImageSource x:Key="DK_Rune">pack://application:,,,/GustavNoesisGUI;component/Assets/Death Knight Class/Shared/Resources/DK_Rune.png</ImageSource>
     <ImageSource x:Key="DK_RuneUnavailable">pack://application:,,,/GustavNoesisGUI;component/Assets/Death Knight Class/Shared/Resources/DK_Rune_Missing.png</ImageSource>
 	<!-- EDIT HERE -->
 	
@@ -1626,7 +1626,7 @@
 				</MultiDataTrigger.Setters>
 			</MultiDataTrigger>
 			<DataTrigger Binding="{Binding TypeId}" Value="DK_Rune">
-				<Setter Property="ActionPointTemplate" Value="{DynamicResource ActionResources.ActionGroup.FrostRuneGroup}"/>
+				<Setter Property="ActionPointTemplate" Value="{DynamicResource ActionResources.ActionGroup.DK_RuneGroup}"/>
 				<Setter Property="ActionPointSize" Value="{DynamicResource ActionResources.ActionPointSize}" />
 			</DataTrigger>
 			<MultiDataTrigger>
